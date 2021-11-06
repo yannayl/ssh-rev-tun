@@ -1,0 +1,23 @@
+AllowAgentForwarding no 
+AllowStreamLocalForwarding no
+## Allow only forwarding remote connections to local machine
+AllowTcpForwarding remote 
+AuthorizedKeysFile /dev/null
+## Use the PAM authentication
+ChallengeResponseAuthentication yes
+ForceCommand /bin/false
+## Allow binding to non-loopback interfaces
+GatewayPorts clientspecified
+IgnoreUserKnownHosts yes
+MaxAuthTries 1
+PasswordAuthentication no 
+## Allow blank passwords
+PermitEmptyPasswords yes 
+PermitTTY no 
+PermitTunnel no 
+PermitUserRC no
+PrintMotd no
+PubkeyAuthentication no
+## the /etc/pam.d/sshd.pam allows reverse-tunneler with blank passowrd
+UsePAM yes
+X11Forwarding no
